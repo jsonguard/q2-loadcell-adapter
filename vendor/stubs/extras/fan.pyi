@@ -1,0 +1,46 @@
+from . import pulse_counter as pulse_counter
+from _typeshed import Incomplete
+
+FAN_MIN_TIME: float
+
+class Fan:
+    printer: Incomplete
+    reactor: Incomplete
+    last_fan_value: float
+    last_fan_time: float
+    name: Incomplete
+    head_name: Incomplete
+    max_power: Incomplete
+    kick_start_time: Incomplete
+    off_below: Incomplete
+    mcu_fan: Incomplete
+    enable_pin: Incomplete
+    tachometer: Incomplete
+    rpm_error: int
+    rpm_timeout: int
+    last_rpm_time: int
+    rpm_watchdog_timer: Incomplete
+    tachometer_heater_names: Incomplete
+    def __init__(self, config, default_shutdown_speed: float = 0.0) -> None: ...
+    def _rpm_watchdog_callback(self, eventtime): ...
+    def get_mcu(self): ...
+    def set_speed(self, print_time, value) -> None: ...
+    def set_speed_from_command(self, value): ...
+    def _handle_request_restart(self, print_time) -> None: ...
+    def get_status(self, eventtime): ...
+
+class FanTachometer:
+    _freq_counter: Incomplete
+    _is_rpm: int
+    ppr: Incomplete
+    def __init__(self, config) -> None: ...
+    def get_status(self, eventtime): ...
+
+class PrinterFan:
+    fan: Incomplete
+    def __init__(self, config) -> None: ...
+    def get_status(self, eventtime): ...
+    def cmd_M106(self, gcmd) -> None: ...
+    def cmd_M107(self, gcmd) -> None: ...
+
+def load_config(config): ...

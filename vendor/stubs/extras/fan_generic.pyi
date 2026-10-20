@@ -1,0 +1,13 @@
+from . import fan as fan
+from _typeshed import Incomplete
+
+class PrinterFanGeneric:
+    cmd_SET_FAN_SPEED_help: str
+    printer: Incomplete
+    fan: Incomplete
+    fan_name: Incomplete
+    def __init__(self, config) -> None: ...
+    def get_status(self, eventtime): ...
+    def cmd_SET_FAN_SPEED(self, gcmd) -> None: ...
+
+def load_config_prefix(config): ...

@@ -1,0 +1,29 @@
+from _typeshed import Incomplete
+
+class SoftwareI2C:
+    addr: Incomplete
+    update_pin_cmd: Incomplete
+    mcu: Incomplete
+    scl_pin: Incomplete
+    scl_main: Incomplete
+    scl_oid: Incomplete
+    cmd_queue: Incomplete
+    sda_oid: Incomplete
+    def __init__(self, config, addr) -> None: ...
+    def get_mcu(self): ...
+    def build_config(self) -> None: ...
+    def i2c_write(self, msg, minclock: int = 0, reqclock: int = 0) -> None: ...
+
+class mcp4018:
+    printer: Incomplete
+    i2c: Incomplete
+    scale: Incomplete
+    start_value: Incomplete
+    name: Incomplete
+    def __init__(self, config) -> None: ...
+    def handle_connect(self) -> None: ...
+    def set_dac(self, value) -> None: ...
+    cmd_SET_DIGIPOT_help: str
+    def cmd_SET_DIGIPOT(self, gcmd) -> None: ...
+
+def load_config_prefix(config): ...

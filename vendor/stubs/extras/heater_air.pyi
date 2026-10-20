@@ -1,0 +1,3 @@
+from . import heater_air_core as heater_air_core
+
+def load_config(config): ...

@@ -1,0 +1,33 @@
+from _typeshed import Incomplete
+from enum import Enum
+
+class AIErrorType(Enum):
+    NONE: str
+    FOREIGN: str
+    NOODLE: str
+
+class AISensitivity(Enum):
+    LOW: str
+    MEDIUM: str
+    HIGH: str
+
+class AiFuncManager:
+    printer: Incomplete
+    gcode: Incomplete
+    save_variables: Incomplete
+    ai_error_type: Incomplete
+    ai_configs: Incomplete
+    def __init__(self, config) -> None: ...
+    def _handle_stats_changed(self, old_status, new_status) -> None: ...
+    def _handle_ready(self) -> None: ...
+    cmd_SET_AI_DETECT_RESULT_help: str
+    def cmd_SET_AI_DETECT_RESULT(self, gcmd) -> None: ...
+    cmd_ENABLE_AI_DETECT_help: str
+    def cmd_ENABLE_AI_DETECT(self, gcmd) -> None: ...
+    cmd_SET_AI_SENSITIVITY_help: str
+    def cmd_SET_AI_SENSITIVITY(self, gcmd) -> None: ...
+    def m4050(self) -> None: ...
+    def _execute_ai_action(self, error_type) -> None: ...
+    def get_status(self, eventtime): ...
+
+def load_config(config): ...

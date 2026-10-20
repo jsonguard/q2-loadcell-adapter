@@ -1,0 +1,59 @@
+from . import bus as bus, tmc as tmc
+from _typeshed import Incomplete
+
+TMC_FREQUENCY: float
+Registers: Incomplete
+ReadRegisters: Incomplete
+Fields: Incomplete
+SignedFields: Incomplete
+FieldFormatters: Incomplete
+MAX_CURRENT: float
+
+class TMCCurrentHelper:
+    printer: Incomplete
+    name: Incomplete
+    mcu_tmc: Incomplete
+    fields: Incomplete
+    req_hold_current: Incomplete
+    sense_resistor: Incomplete
+    def __init__(self, config, mcu_tmc) -> None: ...
+    def _calc_current_bits(self, current, vsense): ...
+    def _calc_current_from_bits(self, cs, vsense): ...
+    def _calc_current(self, run_current, hold_current): ...
+    def get_current(self): ...
+    def set_current(self, run_current, hold_current, print_time) -> None: ...
+
+class MCU_TMC_SPI_chain:
+    printer: Incomplete
+    chain_len: Incomplete
+    mutex: Incomplete
+    spi: Incomplete
+    taken_chain_positions: Incomplete
+    def __init__(self, config, chain_len: int = 1) -> None: ...
+    def _build_cmd(self, data, chain_pos): ...
+    def reg_read(self, reg, chain_pos): ...
+    def reg_write(self, reg, val, chain_pos, print_time=None): ...
+
+def lookup_tmc_spi_chain(config): ...
+
+class MCU_TMC_SPI:
+    printer: Incomplete
+    name: Incomplete
+    mutex: Incomplete
+    name_to_reg: Incomplete
+    fields: Incomplete
+    tmc_frequency: Incomplete
+    def __init__(self, config, name_to_reg, fields, tmc_frequency) -> None: ...
+    def get_fields(self): ...
+    def get_register(self, reg_name): ...
+    def set_register(self, reg_name, val, print_time=None) -> None: ...
+    def get_tmc_frequency(self): ...
+
+class TMC2130:
+    fields: Incomplete
+    mcu_tmc: Incomplete
+    get_phase_offset: Incomplete
+    get_status: Incomplete
+    def __init__(self, config) -> None: ...
+
+def load_config_prefix(config): ...

@@ -1,0 +1,13 @@
+from _typeshed import Incomplete
+
+class PrinterHeaterBed:
+    printer: Incomplete
+    heater: Incomplete
+    get_status: Incomplete
+    stats: Incomplete
+    heater_bed_state: int
+    def __init__(self, config) -> None: ...
+    def cmd_M140(self, gcmd, wait: bool = False) -> None: ...
+    def cmd_M190(self, gcmd) -> None: ...
+
+def load_config(config): ...

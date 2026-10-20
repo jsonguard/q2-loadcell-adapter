@@ -1,0 +1,9 @@
+from . import bus as bus
+from _typeshed import Incomplete
+
+class mcp4728:
+    i2c: Incomplete
+    def __init__(self, config) -> None: ...
+    def set_dac(self, dac, value) -> None: ...
+
+def load_config_prefix(config): ...

@@ -1,0 +1,13 @@
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+
+.vscode/
+.venv/
+*.egg-info/
+
+printer.cfg
+vendor/klipper-src/
+dist/
